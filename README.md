@@ -2,9 +2,6 @@
 
 A collaborative language learning web app where learners improve their writing through crowd-sourced corrections and feedback from native and advanced speakers.
 
-# Live Demo
-
-https://chingulingualoop.netlify.app/
 
 ## Table of Contents
 
@@ -119,17 +116,241 @@ Create a feature branch from `dev`
 git checkout -b feature/your-feature-name
 ```
 
+## Project Structure 
+
+# File Tree: LinguaLoop
+
+**Generated:** 8/14/2026, 12:07:29 AM
+**Root Path:** `f:\LinguaLoop`
+
+```
+├── .github
+│   └── ISSUE_TEMPLATE
+│       ├── bug-report-template.md
+│       ├── epic-template.md
+│       ├── task-template.md
+│       └── user-story-template.md
+├── backend
+│   ├── config
+│   │   └── db.js
+│   ├── controllers
+│   │   ├── auth.controller.js
+│   │   ├── correction.controller.js
+│   │   ├── post.controller.js
+│   │   ├── prompt.controller.js
+│   │   ├── testController.js
+│   │   └── user.controller.js
+│   ├── helpers
+│   │   └── language.js
+│   ├── middleware
+│   │   ├── auth.middleware.js
+│   │   ├── errorMiddleware.js
+│   │   ├── optionalAuth.middleware.js
+│   │   └── validateRequest.middleware.js
+│   ├── models
+│   │   ├── post.model.js
+│   │   ├── prompt.model.js
+│   │   ├── testModel.js
+│   │   └── user.model.js
+│   ├── routes
+│   │   ├── auth.routes.js
+│   │   ├── correction.routes.js
+│   │   ├── post.routes.js
+│   │   ├── prompt.routes.js
+│   │   ├── testRoutes.js
+│   │   └── user.routes.js
+│   ├── seed
+│   │   ├── data
+│   │   │   ├── posts.json
+│   │   │   ├── prompts.json
+│   │   │   └── users.json
+│   │   └── seed.js
+│   ├── validators
+│   │   ├── auth.validator.js
+│   │   ├── post.validator.js
+│   │   └── user.validator.js
+│   ├── .gitignore
+│   ├── ARCHITECTURE.md
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+├── docs
+│   ├── meeting-sprint_planning.pdf
+│   ├── meeting-sprint_preview.pdf
+│   ├── meeting-sprint_retrospective.pdf
+│   ├── meeting-vision_and_feature_planning.pdf
+│   ├── meeting-voyage_kickoff.pdf
+│   ├── team_decision_log.md
+│   └── team_project_ideas.md
+├── frontend
+│   ├── public
+│   │   ├── _redirects
+│   │   ├── favicon.svg
+│   │   └── icons.svg
+│   ├── src
+│   │   ├── api
+│   │   │   └── axios.js
+│   │   ├── app
+│   │   │   ├── hooks
+│   │   │   │   └── useSubmissionStore.js
+│   │   │   ├── hooks.js
+│   │   │   └── store.js
+│   │   ├── assets
+│   │   │   ├── Logo-Desktop.svg
+│   │   │   ├── Logo-Mobile.svg
+│   │   │   ├── hero.png
+│   │   │   ├── logo-text.png
+│   │   │   ├── notFoundImg.png
+│   │   │   └── philosophy.png
+│   │   ├── components
+│   │   │   ├── layout
+│   │   │   │   ├── nav
+│   │   │   │   │   ├── MobileProfileOverlay.jsx
+│   │   │   │   │   └── Navbar.jsx
+│   │   │   │   ├── Footer.jsx
+│   │   │   │   ├── NotFound.jsx
+│   │   │   │   ├── PageLoader.jsx
+│   │   │   │   └── ProtectedRoute.jsx
+│   │   │   └── ui
+│   │   │       ├── alert-dialog.jsx
+│   │   │       ├── avatar.jsx
+│   │   │       ├── badge.jsx
+│   │   │       ├── button.jsx
+│   │   │       ├── card.jsx
+│   │   │       ├── dropdown-menu.jsx
+│   │   │       ├── field.jsx
+│   │   │       ├── input.jsx
+│   │   │       ├── label.jsx
+│   │   │       ├── radio-group.jsx
+│   │   │       ├── select.jsx
+│   │   │       ├── separator.jsx
+│   │   │       └── sonner.jsx
+│   │   ├── features
+│   │   │   ├── auth
+│   │   │   │   ├── components
+│   │   │   │   │   ├── AuthProvider.jsx
+│   │   │   │   │   ├── LoginForm.jsx
+│   │   │   │   │   └── SignUpForm.jsx
+│   │   │   │   ├── hooks
+│   │   │   │   │   └── useAuth.js
+│   │   │   │   ├── pages
+│   │   │   │   │   ├── Login.jsx
+│   │   │   │   │   └── SignUp.jsx
+│   │   │   │   ├── schema
+│   │   │   │   │   ├── loginSchema.js
+│   │   │   │   │   └── signUpSchema.js
+│   │   │   │   ├── authActions.js
+│   │   │   │   ├── authService.js
+│   │   │   │   ├── authSlice.js
+│   │   │   │   └── index.js
+│   │   │   ├── correct
+│   │   │   │   ├── components
+│   │   │   │   │   ├── CorrectionCard.jsx
+│   │   │   │   │   ├── CorrectionList.jsx
+│   │   │   │   │   ├── FilterHeader.jsx
+│   │   │   │   │   ├── FluentLanguagesCard.jsx
+│   │   │   │   │   ├── MyCorrections.jsx
+│   │   │   │   │   └── Pagination.jsx
+│   │   │   │   ├── pages
+│   │   │   │   │   ├── Correct.jsx
+│   │   │   │   │   ├── CorrectionQueue.jsx
+│   │   │   │   │   └── CorrectionReviewPage.jsx
+│   │   │   │   ├── correctionActions.js
+│   │   │   │   ├── correctionService.js
+│   │   │   │   └── correctionSlice.js
+│   │   │   ├── dashboard
+│   │   │   │   ├── components
+│   │   │   │   │   ├── JourneyCard.jsx
+│   │   │   │   │   ├── PromptCard.jsx
+│   │   │   │   │   ├── RecentActivityCard.jsx
+│   │   │   │   │   └── RecentSubmissionsCard.jsx
+│   │   │   │   ├── pages
+│   │   │   │   │   └── Dashboard.jsx
+│   │   │   │   ├── dashboardActions.js
+│   │   │   │   ├── dashboardService.js
+│   │   │   │   ├── dashboardSlice.js
+│   │   │   │   └── index.js
+│   │   │   ├── landing
+│   │   │   │   ├── components
+│   │   │   │   │   ├── Hero.jsx
+│   │   │   │   │   ├── Philosophy.jsx
+│   │   │   │   │   └── Process.jsx
+│   │   │   │   └── pages
+│   │   │   │       └── LandingPage.jsx
+│   │   │   ├── profile
+│   │   │   │   ├── components
+│   │   │   │   │   ├── ProfileSidebar.jsx
+│   │   │   │   │   └── UserStatsCard.jsx
+│   │   │   │   ├── pages
+│   │   │   │   │   └── Profile.jsx
+│   │   │   │   ├── index.js
+│   │   │   │   ├── profileActions.js
+│   │   │   │   ├── profileService.js
+│   │   │   │   └── profileSlice.js
+│   │   │   ├── submissions
+│   │   │   │   ├── pages
+│   │   │   │   │   ├── SubmissionDetail.jsx
+│   │   │   │   │   └── Submissions.jsx
+│   │   │   │   ├── submissionActions.js
+│   │   │   │   ├── submissionService.js
+│   │   │   │   └── submissionSlice.js
+│   │   │   ├── test
+│   │   │   │   ├── testActions.js
+│   │   │   │   ├── testService.js
+│   │   │   │   └── testSlice.js
+│   │   │   └── write
+│   │   │       ├── components
+│   │   │       │   ├── GuidanceCard.jsx
+│   │   │       │   ├── PromptDetails.jsx
+│   │   │       │   ├── TextArea.jsx
+│   │   │       │   └── WritingEditor.jsx
+│   │   │       ├── hooks
+│   │   │       │   ├── useLanguageDetection.js
+│   │   │       │   └── useWordCount.js
+│   │   │       ├── pages
+│   │   │       │   └── Write.jsx
+│   │   │       ├── writeActions.js
+│   │   │       ├── writeService.js
+│   │   │       └── writeSlice.js
+│   │   ├── lib
+│   │   │   └── constants
+│   │   │       └── languages.js
+│   │   ├── mocks
+│   │   │   ├── profileMockData.js
+│   │   │   └── submissionData.js
+│   │   ├── utils
+│   │   │   ├── formatSubmissions.js
+│   │   │   └── utils.js
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── .gitignore
+│   ├── ARCHITECTURE.md
+│   ├── README.md
+│   ├── components.json
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── jsconfig.json
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── vite.config.js
+├── .gitignore
+├── README.md
+├── package-lock.json
+└── package.json
+```
+
+---
+*Generated by FileTree Pro Extension*
+
+
 Make your changes
 Open a Pull Request against `dev`
 
-## Our Team
-
-- Noman Sajid: [GitHub](https://github.com/noman-sajid) / [LinkedIn](https://www.linkedin.com/in/noman-sajid01/)
-- Rasitraka: [GitHub](https://github.com/rasitraka0) / [LinkedIn](https://www.linkedin.com/in/sitraka-heritina-andriambarijao-209597238/)
-- Amanda Acolatse: [GitHub](https://github.com/ae-aco) / [LinkedIn](https://linkedin.com/in/amandaacolatse)
-- Jazz Bullecer: [GitHub](https://github.com/jazxbx) / [LinkedIn](https://www.linkedin.com/in/jazz-bullecer-89780928a)
-- Tonia Montgomery: [GitHub](https://github.com/MontgomeryT7294) / [LinkedIn](http://www.linkedin.com/in/tonia-montgomery)
-- Margaret Wu: [GitHub](https://github.com/margaretcwu) / [LinkedIn](https://www.linkedin.com/in/margaretcwu/)
 
 ```
 
