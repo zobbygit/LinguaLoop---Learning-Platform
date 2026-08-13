@@ -11,7 +11,7 @@ A collaborative language learning web app where learners improve their writing t
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-- [Our Team](#our-team)
+
 
 ## Overview
 
