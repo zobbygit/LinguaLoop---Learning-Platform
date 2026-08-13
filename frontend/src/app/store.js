@@ -1,0 +1,20 @@
+import { configureStore } from '@reduxjs/toolkit';
+import testReducer from '../features/test/testSlice';
+import authReducer from '../features/auth/authSlice';
+import profileReducer from '../features/profile/profileSlice';
+import dashboardReducer from '../features/dashboard/dashboardSlice';
+import submissionsReducer from '@/features/submissions/submissionSlice';
+import correctionsReducer from '@/features/correct/correctionSlice';
+import writeReducer from '@/features/write/writeSlice';
+
+export const store = configureStore({
+  reducer: {
+    test: testReducer,
+    auth: authReducer,
+    profile: profileReducer,
+    dashboard: dashboardReducer,
+    submissions: submissionsReducer,
+    corrections: correctionsReducer,
+    write: writeReducer,
+  },
+});
